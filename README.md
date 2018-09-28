@@ -3,7 +3,7 @@ CKEditor Plugin to create / remove html &lt;button&gt;
 
 ## Installation 
 
-1. Create a folder to contain your custom ckP-Plugins e.g. here: `/frontend/src/ckPlugins/`
+1. Create a folder to contain your custom ckP-Plugins: `/frontend/build/js/ckPlugins/`
 2. In this Folder, create a sub folder called `htmlbutton`
 3. Add the contents of this repository in this location
 4. Update [backboneFormsOverrides.js](https://github.com/adaptlearning/adapt_authoring/blob/master/frontend/src/modules/scaffold/backboneFormsOverrides.js)
@@ -15,7 +15,7 @@ Backbone.Form.editors.TextArea.prototype.render = function() {
     _.defer(_.bind(function() {
         // Initialize the editor
         var textarea = this.$el[0];
-        CKEDITOR.plugins.addExternal( 'htmlbutton', '/ckPlugins/htmlbutton/', 'plugin.js' ); // <-- add custom Plugins
+        CKEDITOR.plugins.addExternal( 'htmlbutton', '/js/ckPlugins/htmlbutton/', 'plugin.js' ); // <-- add custom Plugins
 
         this.editor = CKEDITOR.replace(textarea, {
             toolbar: [
